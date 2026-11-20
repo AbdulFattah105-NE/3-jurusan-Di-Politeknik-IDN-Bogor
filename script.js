@@ -8,7 +8,7 @@ const JURUSAN_DATA = {
     icon: '🎨',
     title: 'Teknologi Rekayasa Multimedia Grafis (TRMG)',
     tagline: 'Menciptakan pengalaman pengguna yang estetis, interaktif, dan konten visual bernilai bisnis.',
-    accentRgb: '244, 114, 182',
+    accentRgb: '16, 185, 129',
     kurikulum: [
       {
         id: 'smt-1-2',
@@ -493,7 +493,7 @@ const JURUSAN_DATA = {
     icon: '🛠️',
     title: 'Teknologi Rekayasa Komputer Jaringan (TRKJ)',
     tagline: 'Membangun, mengamankan, dan mengotomatisasi infrastruktur jaringan modern berskala enterprise dan cloud.',
-    accentRgb: '16, 185, 129',
+    accentRgb: '255, 77, 90',
     kurikulum: [
       {
         id: 'smt-1-2',

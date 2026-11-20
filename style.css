@@ -237,8 +237,8 @@ body {
 
 /* Per-Card Accent Themes */
 .card[data-jurusan='designer'] {
-  --card-accent: #f472b6;
-  --card-accent-rgb: 244, 114, 182;
+  --card-accent: #10b981;
+  --card-accent-rgb: 16, 185, 129;
 }
 
 .card[data-jurusan='programmer'] {
@@ -247,8 +247,8 @@ body {
 }
 
 .card[data-jurusan='engineer'] {
-  --card-accent: #10b981;
-  --card-accent-rgb: 16, 185, 129;
+  --card-accent: #ff4d5a;
+  --card-accent-rgb: 255, 77, 90;
 }
 
 .card {
