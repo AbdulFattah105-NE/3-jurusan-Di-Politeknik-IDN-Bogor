@@ -1,29 +1,204 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jurusan Teknologi</title>
+  <meta name="description" content="Pilih Jurusan Teknologi di Politeknik IDN: Designer, Programmer, dan Engineer." />
+  <title>Pilih Jurusanmu — Jurusan Teknologi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Inline SVG Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%2300e5ff'/%3E%3Cstop offset='100%25' stop-color='%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23071324'/%3E%3Cpath d='M20 22l-10 10 10 10M44 22l10 10-10 10M36 16l-8 32' stroke='url(%23g)' stroke-width='4.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <h1 class="title-glow">Pilih Jurusanmu</h1>
-  <div class="container">
-    <div class="card" onclick="showDetail('designer')">
-      <h2>🎨 Designer</h2>
-      <p>UI/UX, Figma, UX Research, 3D Design, Marketplace Design</p>
-    </div>
-    <div class="card" onclick="showDetail('programmer')">
-      <h2>💻 Programmer</h2>
-      <p>Web & Mobile Dev, PHP, MySQL, CSS, Laravel, Flutter</p>
-    </div>
-    <div class="card" onclick="showDetail('engineer')">
-      <h2>🛠️ Engineer</h2>
-      <p>Networking, CCNA, Mikrotik, DevOps, AWS Cloud</p>
-    </div>
+  <!-- Ambient Background Layers -->
+  <div class="bg-image" aria-hidden="true"></div>
+  <div class="bg-overlay" aria-hidden="true"></div>
+  <canvas id="bg-particles" aria-hidden="true"></canvas>
+
+  <!-- Top-Right Admin Button -->
+  <a href="https://lynk.id/abdulfattah105" target="_blank" rel="noopener noreferrer" class="admin-button">
+    <svg class="admin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+    <span>Kenalan Sama Admin</span>
+  </a>
+
+  <!-- Main Page Wrapper -->
+  <div class="page-wrapper">
+    <!-- Hero Header -->
+    <header class="hero">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        <span>Politeknik IDN &bull; Jurusan Teknologi</span>
+      </div>
+      <h1 class="title-glow">Pilih Jurusanmu</h1>
+      <p class="hero-subtitle">
+        Temukan jalur karier teknologi terbaikmu. Klik salah satu kartu jurusan di bawah untuk melihat kurikulum, skill
+        utama, dan prospek kariernya.
+      </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Cards Grid -->
+      <section class="cards-section" aria-label="Daftar Jurusan Teknologi">
+        <div class="container">
+          <!-- Card 1: Designer (TRMG) -->
+          <article class="card" data-jurusan="designer" tabindex="0" role="button" aria-expanded="false"
+            aria-controls="detail">
+            <div class="card-spotlight" aria-hidden="true"></div>
+            <div class="card-content">
+              <div class="card-top-row">
+                <div class="card-icon-wrap">
+                  <span class="card-icon" aria-hidden="true">🎨</span>
+                </div>
+                <span class="card-prodi-badge">D4 &bull; TRMG</span>
+              </div>
+              <h2>Designer</h2>
+              <p class="card-prodi-name">Teknologi Rekayasa Multimedia Grafis</p>
+              <p class="card-desc">
+                UI/UX Design, Visual Graphic, Motion Graphic, 3D Animation, Framer &amp; Webflow.
+              </p>
+              <div class="card-tags">
+                <span>UI/UX</span>
+                <span>3D Animation</span>
+                <span>Webflow</span>
+              </div>
+              <div class="card-cta">
+                <span>Lihat Kurikulum &amp; Detail</span>
+                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Programmer (TRPL) -->
+          <article class="card" data-jurusan="programmer" tabindex="0" role="button" aria-expanded="false"
+            aria-controls="detail">
+            <div class="card-spotlight" aria-hidden="true"></div>
+            <div class="card-content">
+              <div class="card-top-row">
+                <div class="card-icon-wrap">
+                  <span class="card-icon" aria-hidden="true">💻</span>
+                </div>
+                <span class="card-prodi-badge">D4 &bull; TRPL</span>
+              </div>
+              <h2>Programmer</h2>
+              <p class="card-prodi-name">Teknologi Rekayasa Perangkat Lunak</p>
+              <p class="card-desc">
+                Fullstack Laravel &amp; Next.js, Flutter Mobile, REST API, Firebase, dan CI/CD.
+              </p>
+              <div class="card-tags">
+                <span>Laravel</span>
+                <span>Next.js</span>
+                <span>Flutter</span>
+              </div>
+              <div class="card-cta">
+                <span>Lihat Kurikulum &amp; Detail</span>
+                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Engineer (TRKJ) -->
+          <article class="card" data-jurusan="engineer" tabindex="0" role="button" aria-expanded="false"
+            aria-controls="detail">
+            <div class="card-spotlight" aria-hidden="true"></div>
+            <div class="card-content">
+              <div class="card-top-row">
+                <div class="card-icon-wrap">
+                  <span class="card-icon" aria-hidden="true">🛠️</span>
+                </div>
+                <span class="card-prodi-badge">D4 &bull; TRKJ</span>
+              </div>
+              <h2>Engineer</h2>
+              <p class="card-prodi-name">Teknologi Rekayasa Komputer Jaringan</p>
+              <p class="card-desc">
+                Networking, MTCNA&ndash;MTCINE, CCNA&ndash;CCNP, Linux Automation, Cloud &amp; Firewall.
+              </p>
+              <div class="card-tags">
+                <span>CCNA/CCNP</span>
+                <span>Cloud</span>
+                <span>Firewall</span>
+              </div>
+              <div class="card-cta">
+                <span>Lihat Kurikulum &amp; Detail</span>
+                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Detail Panel Section -->
+      <section class="detail-section" aria-live="polite">
+        <div id="detail" class="detail-box hidden" role="region" aria-label="Detail Jurusan Terpilih"></div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section" aria-label="Tautan Resmi dan Pendaftaran">
+        <a href="https://idn.ac.id" target="_blank" rel="noopener noreferrer" class="idn-button">
+          <span class="btn-shine" aria-hidden="true"></span>
+          <span>Kunjungi Website IDN</span>
+          <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <polyline points="15 3 21 3 21 9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+          </svg>
+        </a>
+
+        <a href="https://idn.pmbonline.siakad.tech/" target="_blank" rel="noopener noreferrer" class="idn-button daftar-button">
+          <span class="btn-shine" aria-hidden="true"></span>
+          <span>Daftar Segera</span>
+          <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M13 5l7 7-7 7" />
+          </svg>
+        </a>
+
+        <a href="https://abdulfattah105-ne.github.io/hub-link-sum-info-pmb-idn/" target="_blank" rel="noopener noreferrer" class="idn-button info-button">
+          <span class="btn-shine" aria-hidden="true"></span>
+          <span>Info Lengkap Politeknik</span>
+          <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="16" x2="12" y2="12" />
+            <line x1="12" y1="8" x2="12.01" y2="8" />
+          </svg>
+        </a>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2026 Diploma 4 dengan gelar S.Tr.Kom &mdash; Abdul Fattah bin Asep Mulyana</p>
+    </footer>
   </div>
 
-  
-    <a href="https://idn.ac.id" target="_blank" class="idn-button">Kunjungi Website</a>
-  </div>
-</section>
+  <script src="script.js"></script>
+</body>
+
+</html>
